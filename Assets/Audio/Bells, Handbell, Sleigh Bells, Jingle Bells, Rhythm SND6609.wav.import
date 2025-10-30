@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://duxivv5aotc1c"
+path="res://.godot/imported/Bells, Handbell, Sleigh Bells, Jingle Bells, Rhythm SND6609.wav-888e0e0d559720d593b2aa67b34c2f3e.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Bells, Handbell, Sleigh Bells, Jingle Bells, Rhythm SND6609.wav"
+dest_files=["res://.godot/imported/Bells, Handbell, Sleigh Bells, Jingle Bells, Rhythm SND6609.wav-888e0e0d559720d593b2aa67b34c2f3e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

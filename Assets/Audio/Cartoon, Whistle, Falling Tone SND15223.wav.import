@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cm0fsqcbxljob"
+path="res://.godot/imported/Cartoon, Whistle, Falling Tone SND15223.wav-86c855e5a87d2c6854d5f7275d23e151.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Cartoon, Whistle, Falling Tone SND15223.wav"
+dest_files=["res://.godot/imported/Cartoon, Whistle, Falling Tone SND15223.wav-86c855e5a87d2c6854d5f7275d23e151.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
