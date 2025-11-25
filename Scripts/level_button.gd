@@ -20,6 +20,7 @@ func _ready():
 func _on_pressed(): #only when enabled
 	if not button.disabled and level_path != "":
 		_playAudio()
+		await get_tree().create_timer(1.0).timeout #TODO better delay (signal based), transition screen
 		get_tree().change_scene_to_file(level_path)
 
 func _playAudio(): #TODO: make an audio manager instead

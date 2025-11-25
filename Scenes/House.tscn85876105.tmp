@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpbpbeagtgpb4"]
 
-[ext_resource type="Script" uid="uid://8sq7w64w4evi" path="res://Scripts/houseSpriteTool.gd" id="1_xvb4y"]
+[ext_resource type="Script" uid="uid://8sq7w64w4evi" path="res://Scenes/houseSpriteTool.gd" id="1_xvb4y"]
 
 [node name="House" type="Node2D"]
 

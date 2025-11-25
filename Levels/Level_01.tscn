@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://cdqbwm5puls71"]
+[gd_scene load_steps=4 format=3 uid="uid://cdqbwm5puls71"]
+
+[ext_resource type="Script" uid="uid://clafnc2aabi4h" path="res://Scripts/GameManager.gd" id="1_mtno4"]
+[ext_resource type="PackedScene" uid="uid://dpbpbeagtgpb4" path="res://Scenes/House.tscn" id="1_t20ai"]
+[ext_resource type="PackedScene" uid="uid://2lebywwccw2m" path="res://Scenes/Sledge.tscn" id="3_tdu8r"]
 
 [node name="Level01" type="Node2D"]
+
+[node name="GameManager1" type="Node" parent="."]
+script = ExtResource("1_mtno4")
+
+[node name="House" parent="." instance=ExtResource("1_t20ai")]
+position = Vector2(180, 171)
+
+[node name="House2" parent="." instance=ExtResource("1_t20ai")]
+position = Vector2(818, 36)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 99.0
+offset_bottom = 48.0
+text = "Gifts delivered: 0/24"
+
+[node name="Sledge" parent="." instance=ExtResource("3_tdu8r")]
