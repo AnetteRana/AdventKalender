@@ -1,14 +1,15 @@
 extends Node2D
 
-@export var forward_speed: float = 150
-@export var rotation_speed: float = 2.0
+@export var gift_scene: PackedScene
 
 func _physics_process(delta: float):
-	var turn = 0.0
-	if Input.is_action_pressed("Rotate_anticlockwise"):
-		turn-=1.0
-	if Input.is_action_pressed("Rotate_clockwise"):
-		turn += 1.0
+	if Input.is_action_just_pressed("DropGift"):
+		spawn_gift()
 		
-	rotation += turn * rotation_speed * delta
-	position += Vector2.RIGHT.rotated(rotation) * forward_speed * delta
+func spawn_gift():
+	if gift_scene == null:
+		return
+		
+	var gift = gift_scene.instantiate()
+	gift.position = position
+	get_parent().add_child(gift)

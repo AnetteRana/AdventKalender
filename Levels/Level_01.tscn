@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdqbwm5puls71"]
+[gd_scene load_steps=5 format=3 uid="uid://cdqbwm5puls71"]
 
 [ext_resource type="Script" uid="uid://clafnc2aabi4h" path="res://Scripts/GameManager.gd" id="1_mtno4"]
 [ext_resource type="PackedScene" uid="uid://dpbpbeagtgpb4" path="res://Scenes/House.tscn" id="1_t20ai"]
-[ext_resource type="PackedScene" uid="uid://2lebywwccw2m" path="res://Scenes/Sledge.tscn" id="3_tdu8r"]
+[ext_resource type="PackedScene" uid="uid://2lebywwccw2m" path="res://Scenes/Sleigh.tscn" id="3_tdu8r"]
+[ext_resource type="PackedScene" uid="uid://bikx422cntmwl" path="res://Scenes/Reindeer.tscn" id="5_yu5cb"]
 
 [node name="Level01" type="Node2D"]
 
@@ -10,10 +11,10 @@
 script = ExtResource("1_mtno4")
 
 [node name="House" parent="." instance=ExtResource("1_t20ai")]
-position = Vector2(180, 171)
+position = Vector2(263, 175)
 
 [node name="House2" parent="." instance=ExtResource("1_t20ai")]
-position = Vector2(818, 36)
+position = Vector2(809, 424)
 
 [node name="Label" type="Label" parent="."]
 offset_right = 99.0
@@ -21,3 +22,44 @@ offset_bottom = 48.0
 text = "Gifts delivered: 0/24"
 
 [node name="Sledge" parent="." instance=ExtResource("3_tdu8r")]
+position = Vector2(145, 317)
+
+[node name="movementComp" parent="Sledge" index="1" node_paths=PackedStringArray("follow_target")]
+follow_target = NodePath("../../Reindeer0")
+
+[node name="Reindeer0" parent="." instance=ExtResource("5_yu5cb")]
+position = Vector2(367, 257)
+
+[node name="movementComp" parent="Reindeer0" index="1" node_paths=PackedStringArray("follow_target")]
+follow_target = NodePath("../../Reindeer1")
+
+[node name="Reindeer1" parent="." instance=ExtResource("5_yu5cb")]
+position = Vector2(367, 437)
+
+[node name="movementComp" parent="Reindeer1" index="1" node_paths=PackedStringArray("follow_target")]
+follow_target = NodePath("../../Reindeer2")
+
+[node name="Reindeer2" parent="." instance=ExtResource("5_yu5cb")]
+position = Vector2(184, 418)
+
+[node name="movementComp" parent="Reindeer2" index="1" node_paths=PackedStringArray("follow_target")]
+follow_target = NodePath("../../Reindeer3")
+
+[node name="Reindeer3" parent="." instance=ExtResource("5_yu5cb")]
+position = Vector2(290, 377)
+
+[node name="movementComp" parent="Reindeer3" index="1" node_paths=PackedStringArray("follow_target")]
+follow_target = NodePath("../../ReindeerFront")
+
+[node name="ReindeerFront" parent="." instance=ExtResource("5_yu5cb")]
+position = Vector2(462, 316)
+
+[node name="movementComp" parent="ReindeerFront" index="1"]
+is_leader = true
+
+[editable path="Sledge"]
+[editable path="Reindeer0"]
+[editable path="Reindeer1"]
+[editable path="Reindeer2"]
+[editable path="Reindeer3"]
+[editable path="ReindeerFront"]

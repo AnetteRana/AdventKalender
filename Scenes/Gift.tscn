@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://c0i4mfsm4kgka"]
+[gd_scene load_steps=2 format=3 uid="uid://c0i4mfsm4kgka"]
+
+[ext_resource type="Texture2D" uid="uid://b25rnitk2na48" path="res://Assets/Sprites/gift.svg" id="1_xcs3i"]
 
 [node name="Gift" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, 0)
+scale = Vector2(0.0277778, 0.0277411)
+texture = ExtResource("1_xcs3i")

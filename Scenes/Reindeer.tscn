@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bikx422cntmwl"]
+
+[ext_resource type="Script" uid="uid://brxmjju2oeddf" path="res://Scripts/movement_component.gd" id="2_n6u1o"]
+[ext_resource type="Texture2D" uid="uid://lrvvd8f6rmqm" path="res://Assets/Sprites/reindeer.svg" id="4_46krx"]
+
+[node name="Sledge" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-3.05176e-05, 0)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_46krx")
+
+[node name="movementComp" type="Node" parent="."]
+script = ExtResource("2_n6u1o")
