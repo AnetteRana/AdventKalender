@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://brxmjju2oeddf" path="res://Scripts/movement_component.gd" id="4_k2c86"]
 
 [node name="Sleigh" type="Node2D"]
+z_index = 10
 script = ExtResource("1_4rk31")
 gift_scene = ExtResource("2_hi1ed")
 

@@ -1,10 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0i4mfsm4kgka"]
+[gd_scene load_steps=4 format=3 uid="uid://c0i4mfsm4kgka"]
 
+[ext_resource type="Script" uid="uid://dytpxx41xy4s3" path="res://Scripts/gift.gd" id="1_k6tov"]
 [ext_resource type="Texture2D" uid="uid://b25rnitk2na48" path="res://Assets/Sprites/gift.svg" id="1_xcs3i"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8qck2"]
+radius = 13.6015
+
 [node name="Gift" type="Node2D"]
+z_index = 5
+script = ExtResource("1_k6tov")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.5, 0)
 scale = Vector2(0.0277778, 0.0277411)
 texture = ExtResource("1_xcs3i")
+
+[node name="Detector" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource("CircleShape2D_8qck2")

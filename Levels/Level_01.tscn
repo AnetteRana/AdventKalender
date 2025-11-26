@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdqbwm5puls71"]
+[gd_scene load_steps=6 format=3 uid="uid://cdqbwm5puls71"]
 
 [ext_resource type="Script" uid="uid://clafnc2aabi4h" path="res://Scripts/GameManager.gd" id="1_mtno4"]
 [ext_resource type="PackedScene" uid="uid://dpbpbeagtgpb4" path="res://Scenes/House.tscn" id="1_t20ai"]
+[ext_resource type="Script" uid="uid://dqv803xjwhlc2" path="res://Scripts/current_score_display.gd" id="3_lkd0j"]
 [ext_resource type="PackedScene" uid="uid://2lebywwccw2m" path="res://Scenes/Sleigh.tscn" id="3_tdu8r"]
 [ext_resource type="PackedScene" uid="uid://bikx422cntmwl" path="res://Scenes/Reindeer.tscn" id="5_yu5cb"]
 
@@ -16,10 +17,11 @@ position = Vector2(263, 175)
 [node name="House2" parent="." instance=ExtResource("1_t20ai")]
 position = Vector2(809, 424)
 
-[node name="Label" type="Label" parent="."]
+[node name="ScoreLabel" type="Label" parent="."]
 offset_right = 99.0
 offset_bottom = 48.0
 text = "Gifts delivered: 0/24"
+script = ExtResource("3_lkd0j")
 
 [node name="Sledge" parent="." instance=ExtResource("3_tdu8r")]
 position = Vector2(145, 317)
