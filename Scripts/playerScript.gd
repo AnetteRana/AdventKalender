@@ -2,7 +2,7 @@ extends Node2D
 
 @export var gift_scene: PackedScene
 
-func _physics_process(delta: float):
+func _physics_process(_delta: float):
 	if Input.is_action_just_pressed("DropGift"):
 		spawn_gift()
 		

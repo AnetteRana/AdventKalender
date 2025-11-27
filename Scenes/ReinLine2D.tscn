@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx70raeqmpls"]
+
+[ext_resource type="Script" uid="uid://chkag8fnig2oh" path="res://Scripts/line_2d.gd" id="1_k7hsc"]
+
+[node name="ReinLine2d" type="Line2D"]
+width = 2.0
+default_color = Color(0.259801, 0.137944, 0.12353, 1)
+script = ExtResource("1_k7hsc")

@@ -16,3 +16,9 @@ texture = ExtResource("1_ibiri")
 
 [node name="movementComp" type="Node" parent="."]
 script = ExtResource("4_k2c86")
+
+[node name="LineAnchor_L" type="Node2D" parent="."]
+position = Vector2(14.245, -6.625)
+
+[node name="LineAnchor_R" type="Node2D" parent="."]
+position = Vector2(14.245, 6.625)

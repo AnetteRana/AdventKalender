@@ -10,6 +10,45 @@ extends Node
 @export var bounce_padding: float = 5.0
 @export var bounce_damp: float = 1.0
 
+#@export var rein_line_scene: PackedScene
+const REIN_LINE_SCENE := preload("res://Scenes/ReinLine2D.tscn")
+
+func _ready()->void:
+	if follow_target and REIN_LINE_SCENE:
+		_spawn_reins()
+		
+func _spawn_reins()->void:	
+	var my_parent:= get_parent() as Node2D
+	
+	### Right side ###
+# find anchors
+	var self_anchor_R: Node2D = my_parent.find_child("LineAnchor_R", true, false)
+	var target_anchor_R: Node2D = follow_target.find_child("LineAnchor_R", true, false)
+	
+	if not (self_anchor_R and target_anchor_R):
+		return
+# make lines
+	var line_R = REIN_LINE_SCENE.instantiate()
+#give node2d to/from
+	line_R.from_anchor = self_anchor_R
+	line_R.to_anchor = target_anchor_R
+# attach to root
+	my_parent.add_child.call_deferred(line_R)
+### Left side ###
+# find anchors
+	var self_anchor_L: Node2D = my_parent.find_child("LineAnchor_L", true, false)
+	var target_anchor_L: Node2D = follow_target.find_child("LineAnchor_L", true, false)
+	
+	if not (self_anchor_L and target_anchor_L):
+		return
+# make lines
+	var line_L = REIN_LINE_SCENE.instantiate()
+#give node2d to/from
+	line_L.from_anchor = self_anchor_L
+	line_L.to_anchor = target_anchor_L
+# attach to root
+	my_parent.add_child.call_deferred(line_L)
+
 func _physics_process(delta: float) -> void:
 	var body:= get_parent() as Node2D
 	if body == null:
@@ -47,21 +86,23 @@ func _bounce_edges(body: Node2D) -> void:
 
 	var hit_vertical := false   # left/right walls
 	var hit_horizontal := false # top/bottom walls
-
+	
+	var globalPos:= body.global_position
+	
 	# X bounds
-	if body.position.x < bounce_padding:
-		body.position.x = bounce_padding
+	if globalPos.x < bounce_padding:
+		globalPos.x = bounce_padding
 		hit_vertical = true
-	elif body.position.x > screen_size.x - bounce_padding:
-		body.position.x = screen_size.x - bounce_padding
+	elif globalPos.x > screen_size.x - bounce_padding:
+		globalPos.x = screen_size.x - bounce_padding
 		hit_vertical = true
 
 	# Y bounds
-	if body.position.y < bounce_padding:
-		body.position.y = bounce_padding
+	if globalPos.y < bounce_padding:
+		globalPos.y = bounce_padding
 		hit_horizontal = true
-	elif body.position.y > screen_size.y - bounce_padding:
-		body.position.y = screen_size.y - bounce_padding
+	elif globalPos.y > screen_size.y - bounce_padding:
+		globalPos.y = screen_size.y - bounce_padding
 		hit_horizontal = true
 
 	if not (hit_vertical or hit_horizontal):
@@ -76,4 +117,6 @@ func _bounce_edges(body: Node2D) -> void:
 		reflected.y = -reflected.y
 
 	var target_angle = reflected.angle()
-	body.rotation = lerp_angle(body.rotation, target_angle, bounce_damp)
+	
+	body.global_position = globalPos
+	body.global_rotation = lerp_angle(body.global_rotation, target_angle, bounce_damp)
