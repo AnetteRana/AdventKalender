@@ -5,13 +5,14 @@ extends Control
 @export var audio_clicked: AudioStream = preload("res://Assets/Audio/3Bells.wav")
 @onready var button: Button = $Button
 
+
 func _ready():
 	var now = Time.get_datetime_dict_from_system()
 	var todays_date = "%04d-%02d-%02d" % [now.year, now.month, now.day]
 
 	if todays_date < unlock_date: # Locked
 		button.disabled = true
-		button.text = "Locked until %s" % [unlock_date]
+		button.text = str(level_num)#"Locked until %s" % [unlock_date]
 	else: # Unlocked
 		button.disabled = false
 		button.text = str(level_num)

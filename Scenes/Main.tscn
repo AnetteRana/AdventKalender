@@ -27,9 +27,78 @@ level_num = 1
 unlock_date = "2025-11-25"
 
 [node name="LevelButton2" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
-offset_left = 475.0
-offset_top = 213.0
-offset_right = 675.0
-offset_bottom = 313.0
-level_num = 1
-unlock_date = "2025-12-02"
+offset_left = 410.0
+offset_top = 444.0
+offset_right = 490.0
+offset_bottom = 524.0
+level_num = 2
+
+[node name="LevelButton3" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 251.0
+offset_top = 145.0
+offset_right = 331.0
+offset_bottom = 225.0
+level_num = 3
+
+[node name="LevelButton4" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 63.0
+offset_top = 242.0
+offset_right = 143.0
+offset_bottom = 322.0
+level_num = 4
+
+[node name="LevelButton5" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 243.0
+offset_top = 308.0
+offset_right = 323.0
+offset_bottom = 388.0
+level_num = 5
+
+[node name="LevelButton6" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 584.0
+offset_top = 179.0
+offset_right = 664.0
+offset_bottom = 259.0
+level_num = 6
+
+[node name="LevelButton7" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 714.0
+offset_top = 175.0
+offset_right = 794.0
+offset_bottom = 255.0
+level_num = 7
+
+[node name="LevelButton8" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 773.0
+offset_top = 422.0
+offset_right = 853.0
+offset_bottom = 502.0
+level_num = 8
+
+[node name="LevelButton9" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 158.0
+offset_top = 164.0
+offset_right = 238.0
+offset_bottom = 244.0
+level_num = 9
+
+[node name="LevelButton10" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 86.0
+offset_top = 409.0
+offset_right = 166.0
+offset_bottom = 489.0
+level_num = 10
+
+[node name="LevelButton11" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 327.0
+offset_top = 22.0
+offset_right = 407.0
+offset_bottom = 102.0
+level_num = 11
+
+[node name="LevelButton12" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 516.0
+offset_top = 308.0
+offset_right = 596.0
+offset_bottom = 388.0
+level_num = 12

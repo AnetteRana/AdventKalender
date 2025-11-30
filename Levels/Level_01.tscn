@@ -15,16 +15,16 @@ position = Vector2(31, 269)
 [node name="LevelObjects" type="Node" parent="."]
 
 [node name="House" parent="LevelObjects" instance=ExtResource("1_t20ai")]
-position = Vector2(263, 175)
+position = Vector2(359, 262)
 
 [node name="House2" parent="LevelObjects" instance=ExtResource("1_t20ai")]
-position = Vector2(809, 424)
+position = Vector2(708, 235)
 
 [node name="House3" parent="LevelObjects" instance=ExtResource("1_t20ai")]
 position = Vector2(825, 157)
 
 [node name="House4" parent="LevelObjects" instance=ExtResource("1_t20ai")]
-position = Vector2(627, 349)
+position = Vector2(558, 268)
 
 [node name="House5" parent="LevelObjects" instance=ExtResource("1_t20ai")]
-position = Vector2(151, 361)
+position = Vector2(249, 270)

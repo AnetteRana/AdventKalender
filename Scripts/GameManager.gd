@@ -7,6 +7,16 @@ var current_level: Node = null
 var currentLevelResource: levelResource
 
 var current_housesFilled: int = 0 
+var current_giftsUsed: int = 0
+
+var level_time : float = 0.0
+var tracking: bool = false
+
+var saveDataAsRead
+
+func _process(delta):
+	if tracking:
+		level_time += delta
 
 func _on_house_filled():
 	current_housesFilled += 1
@@ -20,7 +30,17 @@ func _on_house_filled():
 	else:
 		pass#print("current_housesFilled: " + str(current_housesFilled))
 
+func _on_gift_thrown(): # from playerScript
+	current_giftsUsed += 1
+	print(str(current_giftsUsed))
+
 func _on_level_finish():
+	tracking = false #stop time 
+	
+	current_level = level_container.get_child(0)
+	var wastedGifts: int = current_giftsUsed - current_housesFilled
+	update_score(str(currentLevelResource.levelNumber), wastedGifts, level_time)
+	
 	await get_tree().create_timer(0.4).timeout
 	
 # evaluate and save score TODO:(show score screen really...)
@@ -29,7 +49,6 @@ func _on_level_finish():
 	$LevelSelect.show() 
 
 # remove level
-	current_level = level_container.get_child(0)
 	current_level.queue_free()
 
 #on p
@@ -52,6 +71,7 @@ func load_level(levelNum: int):
 
 	var inst = packed.instantiate()
 	level_container.add_child(inst)
+	tracking = true
 	
 	currentLevelResource = inst.level_data
 
@@ -59,9 +79,54 @@ func load_level(levelNum: int):
 	for House in get_tree().get_nodes_in_group("house"):
 		if inst.is_ancestor_of(House):  # only houses in this level
 			House._on_house_filled.connect(_on_house_filled)
+	
+	var sleigh = inst.get_node("PlayerCharacter/Sleigh")
+	sleigh._on_gift_thrown.connect(_on_gift_thrown)
+
 
 func _getLevelPath(level_num: int) -> String:
 		var level_num_str: String = str(level_num)
 		if level_num_str.length()==1:
 			level_num_str = "0"+level_num_str
 		return "res://Levels/Level_" + level_num_str + ".tscn"
+
+# save handling
+func load_save() -> Dictionary:
+	var file = FileAccess.open("res://Data/SaveData.json", FileAccess.READ)
+	if file:
+		var text = file.get_as_text()
+		var parsed = JSON.parse_string(text)
+
+		if typeof(parsed) == TYPE_DICTIONARY:
+			return parsed
+
+		# if file exists but broken
+		return {"levels": {}}
+
+	# if no file found
+	return {"levels": {}}
+
+
+func save_data(data):
+	var file = FileAccess.open("res://Data/SaveData.json", FileAccess.WRITE)
+	file.store_string(JSON.stringify(data))
+
+func update_score(level_id: String, gifts_lost: int, time: float):
+	var data = load_save()
+	var lvl = data.levels.get(level_id, {"fewest": INF, "bestTime": INF})
+
+	var better = false
+	
+	# improve if fewer gifts lost
+	if gifts_lost < lvl.fewest:
+		lvl.fewest = gifts_lost
+		lvl.bestTime = time
+		better = true
+	# OR same gifts lost but faster time
+	elif gifts_lost == lvl.fewest and time < lvl.bestTime:
+		lvl.bestTime = time
+		better = true
+
+	if better:
+		data.levels[level_id] = lvl
+		save_data(data)
