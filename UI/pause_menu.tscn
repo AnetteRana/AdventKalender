@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cro8iqu7ijcrk"]
+
+[ext_resource type="Script" uid="uid://cs6se7du32uc7" path="res://UI/pause_menu.gd" id="1_jfm1e"]
+[ext_resource type="Shader" uid="uid://ypom6b1t4svf" path="res://UI/pause_menu.gdshader" id="1_ltd3m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jfm1e"]
+shader = ExtResource("1_ltd3m")
+shader_parameter/lod = 0.0
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jfm1e")
+
+[node name="Blur_ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jfm1e")
+layout_mode = 0
+offset_right = 1138.0
+offset_bottom = 631.0
+color = Color(1, 1, 1, 0.431373)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 387.0
+offset_bottom = 350.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="Button_Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[connection signal="toggled" from="PanelContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button_Resume" to="." method="_on_button_resume_pressed"]

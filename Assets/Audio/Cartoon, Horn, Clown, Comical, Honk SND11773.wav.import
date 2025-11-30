@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccyyj23at5ppn"
+path="res://.godot/imported/Cartoon, Horn, Clown, Comical, Honk SND11773.wav-2dfe989abf30548321e7665e0b90365f.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Cartoon, Horn, Clown, Comical, Honk SND11773.wav"
+dest_files=["res://.godot/imported/Cartoon, Horn, Clown, Comical, Honk SND11773.wav-2dfe989abf30548321e7665e0b90365f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,6 +1,6 @@
 extends Control
 
-@export var level_path: String
+@export var level_num: int
 @export var unlock_date: String = "2025-12-01"  # format YYYY-MM-DD
 @export var audio_clicked: AudioStream = preload("res://Assets/Audio/3Bells.wav")
 @onready var button: Button = $Button
@@ -14,17 +14,31 @@ func _ready():
 		button.text = "Locked until %s" % [unlock_date]
 	else: # Unlocked
 		button.disabled = false
+		button.text = str(level_num)
+
 
 	button.pressed.connect(_on_pressed)
 
 func _on_pressed(): #only when enabled
-	if not button.disabled and level_path != "":
+	if not button.disabled and _getLevelPath() != "":
 		_playAudio()
 		await get_tree().create_timer(1.0).timeout #TODO better delay (signal based), transition screen
-		get_tree().change_scene_to_file(level_path)
+		# get_tree().change_scene_to_file(level_path)
+		
+		# get_tree().change_scene_to_file(_getLevelPath())
+		# tell main to load level:
+		var scenenene = get_tree().current_scene
+		scenenene.load_level(level_num)
+		get_parent().hide()
 
 func _playAudio(): #TODO: make an audio manager instead
 	var player = AudioStreamPlayer.new()
 	add_child(player)
 	player.stream = audio_clicked
 	player.play()
+
+func _getLevelPath() -> String:
+		var level_num_str: String = str(level_num)
+		if level_num_str.length()==1:
+			level_num_str = "0"+level_num_str
+		return "res://Levels/Level_" + level_num_str + ".tscn"

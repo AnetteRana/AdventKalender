@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://2lebywwccw2m"]
+[gd_scene load_steps=6 format=3 uid="uid://2lebywwccw2m"]
 
 [ext_resource type="Script" uid="uid://dljpyp7b1vgmn" path="res://Scripts/playerScript.gd" id="1_4rk31"]
 [ext_resource type="Texture2D" uid="uid://bbwi4rv5kwbjp" path="res://Assets/Sprites/Sleigh.svg" id="1_ibiri"]
 [ext_resource type="PackedScene" uid="uid://c0i4mfsm4kgka" path="res://Scenes/Gift.tscn" id="2_hi1ed"]
 [ext_resource type="Script" uid="uid://brxmjju2oeddf" path="res://Scripts/movement_component.gd" id="4_k2c86"]
+[ext_resource type="AudioStream" uid="uid://cdhq4yrr1552k" path="res://Assets/Audio/Swooshes, Swish, Bamboo Stick, Swing, Whoosh, Air SND16277.wav" id="5_7piph"]
 
 [node name="Sleigh" type="Node2D"]
 z_index = 10
@@ -22,3 +23,7 @@ position = Vector2(14.245, -6.625)
 
 [node name="LineAnchor_R" type="Node2D" parent="."]
 position = Vector2(14.245, 6.625)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7piph")
+bus = &"SFX"

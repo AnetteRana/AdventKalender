@@ -4,16 +4,13 @@ extends Node2D
 @export var final_scale: float = 0.4
 @export var miss_delay: float = 0.5
 
-@export var house_group: StringName = &"house"
-@export var audio_clicked: AudioStream = preload("res://Assets/Audio/HitSnow1.wav")
+@onready var audio_snow_landing: AudioStreamPlayer2D = $audio_snowLanding
+#@onready var audio_falling: AudioStreamPlayer2D = $audi_falling
 
-func _playAudio(): #TODO: make an audio manager instead
-	var player = AudioStreamPlayer.new()
-	add_child(player)
-	player.stream = audio_clicked
-	player.play()
+@export var house_group: StringName = &"house"
 
 func _ready() -> void:
+
 	# Animate scaling down over fall_duration
 	var start_scale := scale
 	var target_scale := start_scale * final_scale
@@ -26,7 +23,6 @@ func _ready() -> void:
 	await tween.finished
 	await _resolve_landing()
 
-
 func _resolve_landing() -> void:
 	var house := _find_house_under()
 	if house and house.has_method("receive_gift"):
@@ -35,9 +31,7 @@ func _resolve_landing() -> void:
 		return
 
 	# Missed house
-	if AudioStream:
-		_playAudio()
-
+	audio_snow_landing.play()
 
 	await get_tree().create_timer(miss_delay).timeout
 	queue_free()

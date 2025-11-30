@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0i4mfsm4kgka"]
+[gd_scene load_steps=6 format=3 uid="uid://c0i4mfsm4kgka"]
 
 [ext_resource type="Script" uid="uid://dytpxx41xy4s3" path="res://Scripts/gift.gd" id="1_k6tov"]
 [ext_resource type="Texture2D" uid="uid://b25rnitk2na48" path="res://Assets/Sprites/gift.svg" id="1_xcs3i"]
+[ext_resource type="AudioStream" uid="uid://d3b2j2wln5fcv" path="res://Assets/Audio/HitSnow1.wav" id="3_6kllv"]
+[ext_resource type="AudioStream" uid="uid://bqwfnicpf0v7v" path="res://Assets/Audio/Cartoon, Whistle, Bomb Whistle, Falling, Tonal, Meme Redesign SND140175.wav" id="4_6kllv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qck2"]
 radius = 13.6015
@@ -21,3 +23,12 @@ collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource("CircleShape2D_8qck2")
+
+[node name="audio_snowLanding" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6kllv")
+bus = &"SFX"
+
+[node name="audio_falling" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6kllv")
+volume_db = -33.0
+bus = &"SFX"

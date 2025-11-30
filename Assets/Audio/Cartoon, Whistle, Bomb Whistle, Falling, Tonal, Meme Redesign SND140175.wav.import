@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bqwfnicpf0v7v"
+path="res://.godot/imported/Cartoon, Whistle, Bomb Whistle, Falling, Tonal, Meme Redesign SND140175.wav-897b758e4dd740d4e8790b882852f634.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Cartoon, Whistle, Bomb Whistle, Falling, Tonal, Meme Redesign SND140175.wav"
+dest_files=["res://.godot/imported/Cartoon, Whistle, Bomb Whistle, Falling, Tonal, Meme Redesign SND140175.wav-897b758e4dd740d4e8790b882852f634.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

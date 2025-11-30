@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://jw4gbd3s8pdr"]
+
+[ext_resource type="Script" uid="uid://clafnc2aabi4h" path="res://Scripts/GameManager.gd" id="1_kln2b"]
+[ext_resource type="PackedScene" uid="uid://cwvq35k85wi6m" path="res://Levels/LevelSelect.tscn" id="2_idj7w"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_kln2b")
+
+[node name="LevelContainer" type="Node2D" parent="."]
+
+[node name="LevelSelectMenu" parent="." instance=ExtResource("2_idj7w")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

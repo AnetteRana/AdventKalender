@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dd7n3xmvs631x"
+path="res://.godot/imported/Cartoon, Vocal, Quack, Short, Goofy, Funny, Meme Redesign SND140176.wav-322d8fb9f99a01a8d1af99bf06453f2c.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Cartoon, Vocal, Quack, Short, Goofy, Funny, Meme Redesign SND140176.wav"
+dest_files=["res://.godot/imported/Cartoon, Vocal, Quack, Short, Goofy, Funny, Meme Redesign SND140176.wav-322d8fb9f99a01a8d1af99bf06453f2c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

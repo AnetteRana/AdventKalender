@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwvq35k85wi6m"]
+
+[ext_resource type="PackedScene" uid="uid://cq2ww2k4qwss7" path="res://UI/LevelButton.tscn" id="2_1qomi"]
+[ext_resource type="Theme" uid="uid://de4gnedaff1q4" path="res://ChristmasTheme.tres" id="3_8sr8g"]
+
+[node name="LevelSelectMenu" type="Node2D"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 823.0
+offset_bottom = 376.0
+columns = 3
+
+[node name="LevelButton" parent="GridContainer" instance=ExtResource("2_1qomi")]
+layout_mode = 2
+unlock_date = "2025-12-01"
+
+[node name="LevelButton2" parent="GridContainer" instance=ExtResource("2_1qomi")]
+layout_mode = 2
+unlock_date = "2025-12-02"
+
+[node name="LevelButton3" parent="GridContainer" instance=ExtResource("2_1qomi")]
+layout_mode = 2
+theme = ExtResource("3_8sr8g")
+unlock_date = "2025-10-02"
