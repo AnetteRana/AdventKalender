@@ -5,6 +5,7 @@ extends Control
 @export var audio_clicked: AudioStream = preload("res://Assets/Audio/3Bells.wav")
 @onready var button: Button = $Button
 
+@onready var infoPanelCTRL: Control = get_parent().get_node("InfoPanel")
 
 func _ready():
 	var now = Time.get_datetime_dict_from_system()
@@ -17,7 +18,7 @@ func _ready():
 		button.disabled = false
 		button.text = str(level_num)
 
-
+	#infoPanelCTRL = get_tree().get_first_node_in_group("info_panel")
 	button.pressed.connect(_on_pressed)
 
 func _on_pressed(): #only when enabled
@@ -43,3 +44,15 @@ func _getLevelPath() -> String:
 		if level_num_str.length()==1:
 			level_num_str = "0"+level_num_str
 		return "res://Levels/Level_" + level_num_str + ".tscn"
+
+func _on_mouse_exited() -> void:
+	if infoPanelCTRL:
+		infoPanelCTRL.visible = false
+
+
+func _on_button_mouse_entered() -> void:
+	print("mouse over button")
+	if infoPanelCTRL:
+		infoPanelCTRL.update_info(level_num)
+	else:
+		print("error: no infoPanelCTRL?") # Replace with function body.

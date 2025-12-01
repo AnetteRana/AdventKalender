@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://rk0aobqe5j7g"]
+
+[ext_resource type="Script" uid="uid://de5k1me4k88u5" path="res://Levels/levelRoot.gd" id="1_8m0px"]
+[ext_resource type="Resource" uid="uid://de6cikd8tovbt" path="res://Resources/level_01.tres" id="2_hhbg7"]
+[ext_resource type="PackedScene" uid="uid://dsmo4vj488gp1" path="res://Scenes/PlayerCharacter.tscn" id="3_exfpd"]
+[ext_resource type="PackedScene" uid="uid://dpbpbeagtgpb4" path="res://Scenes/House.tscn" id="4_c8ve7"]
+
+[node name="Level01" type="Node2D"]
+script = ExtResource("1_8m0px")
+level_data = ExtResource("2_hhbg7")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("3_exfpd")]
+position = Vector2(31, 269)
+
+[node name="LevelObjects" type="Node" parent="."]
+
+[node name="House" parent="LevelObjects" instance=ExtResource("4_c8ve7")]
+position = Vector2(321, 130)
+
+[node name="House2" parent="LevelObjects" instance=ExtResource("4_c8ve7")]
+position = Vector2(586, 442)
+
+[node name="House3" parent="LevelObjects" instance=ExtResource("4_c8ve7")]
+position = Vector2(721, 416)
+
+[node name="House4" parent="LevelObjects" instance=ExtResource("4_c8ve7")]
+position = Vector2(761, 318)
+
+[node name="House5" parent="LevelObjects" instance=ExtResource("4_c8ve7")]
+position = Vector2(149, 225)
+
+[node name="House6" parent="LevelObjects" instance=ExtResource("4_c8ve7")]
+position = Vector2(354, 244)
+
+[node name="House7" parent="LevelObjects" instance=ExtResource("4_c8ve7")]
+position = Vector2(206, 108)

@@ -12,7 +12,11 @@ var current_giftsUsed: int = 0
 var level_time : float = 0.0
 var tracking: bool = false
 
-var saveDataAsRead
+var save_data_cache = {} 
+
+func _ready():
+	Global.game_manager = self
+	load_save()
 
 func _process(delta):
 	if tracking:
@@ -96,6 +100,7 @@ func load_save() -> Dictionary:
 	if file:
 		var text = file.get_as_text()
 		var parsed = JSON.parse_string(text)
+		save_data_cache = parsed
 
 		if typeof(parsed) == TYPE_DICTIONARY:
 			return parsed
@@ -117,14 +122,14 @@ func update_score(level_id: String, gifts_lost: int, time: float):
 
 	var better = false
 	
-	# improve if fewer gifts lost
+# if fewer gifts missed, or same gifts but faster time
 	if gifts_lost < lvl.fewest:
 		lvl.fewest = gifts_lost
-		lvl.bestTime = time
+		lvl.bestTime = round(time * 10) / 10.0   # round to 1 decimal
 		better = true
 	# OR same gifts lost but faster time
 	elif gifts_lost == lvl.fewest and time < lvl.bestTime:
-		lvl.bestTime = time
+		lvl.bestTime = round(time * 10) / 10.0
 		better = true
 
 	if better:
