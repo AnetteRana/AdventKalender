@@ -12,12 +12,11 @@ extends Node
 
 #@export var rein_line_scene: PackedScene
 const REIN_LINE_SCENE := preload("res://Scenes/PlayerCharacter_folder/ReinLine2D.tscn")
-
-func _ready()->void:
-	if follow_target and REIN_LINE_SCENE:
-		_spawn_reins()
 		
-func _spawn_reins()->void:	
+func spawn_reins()->void:			
+	if not follow_target:
+		return
+	
 	var my_parent:= get_parent() as Node2D
 	
 	### Right side ###

@@ -46,6 +46,7 @@ func _on_level_finish():
 	
 	# show score screen
 	score_display.show()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 # return level select menu 
 	level_select.show() 
@@ -58,10 +59,9 @@ func _on_level_finish():
 #bring up ui
 
 func load_level(levelNum: int):
-	# clear old level
-	#for child in level_container.get_children():
-		#child.queue_free()
-		
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
 	current_housesFilled = 0
 		
 	var path = _getLevelPath(levelNum)
@@ -74,7 +74,6 @@ func load_level(levelNum: int):
 	level_container.add_child(inst)
 	tracking = true
 	
-	#currentLevelResource = inst.level_data
 
 # connect all houses in this level
 	for House in get_tree().get_nodes_in_group("house"):
