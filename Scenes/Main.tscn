@@ -175,6 +175,7 @@ theme = ExtResource("4_v1gob")
 text = "time spent"
 
 [node name="LevelFinishedDisplay" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

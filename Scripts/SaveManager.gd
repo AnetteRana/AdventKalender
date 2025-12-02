@@ -46,7 +46,7 @@ func update_score(level_id: String, gifts_lost: int, time: float):
 		save_data_cache.levels[level_id] = current_lvl_savedata
 		save_data()
 	
-	score_display.update_score_display(level_id, str(gifts_lost), str(round(time * 10) / 10.0), str(current_lvl_savedata.wastedGifts), str(current_lvl_savedata.bestTime))
+	score_display.update_score_display(str(gifts_lost), str(round(time * 10) / 10.0), str(current_lvl_savedata.wastedGifts), str(current_lvl_savedata.bestTime))
 
 # getters for UI
 func get_level_wastedGifts(level_id: String) -> String:

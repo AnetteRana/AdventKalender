@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://cenuk0rn2ny25"]
+
+[ext_resource type="Script" uid="uid://8e75gipwb5rw" path="res://Levels/level_script.gd" id="1_u2pyv"]
+[ext_resource type="PackedScene" uid="uid://dsmo4vj488gp1" path="res://Scenes/PlayerCharacter_folder/PlayerCharacter.tscn" id="2_g02sr"]
+[ext_resource type="PackedScene" uid="uid://dpbpbeagtgpb4" path="res://Scenes/House.tscn" id="3_04sds"]
+[ext_resource type="Texture2D" uid="uid://bqjf3gfu0t1hw" path="res://Assets/Sprites/snowGround_01.svg" id="4_wopbm"]
+
+[node name="Level01" type="Node2D"]
+script = ExtResource("1_u2pyv")
+Level_ID = "03"
+HousesInLevel = 10
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_g02sr")]
+position = Vector2(31, 269)
+
+[node name="LevelObjects" type="Node" parent="."]
+
+[node name="House" parent="LevelObjects" instance=ExtResource("3_04sds")]
+position = Vector2(619, 51)
+
+[node name="House2" parent="LevelObjects" instance=ExtResource("3_04sds")]
+position = Vector2(216, 423)
+
+[node name="House3" parent="LevelObjects" instance=ExtResource("3_04sds")]
+position = Vector2(92, 454)
+
+[node name="House4" parent="LevelObjects" instance=ExtResource("3_04sds")]
+position = Vector2(316, 331)
+
+[node name="House5" parent="LevelObjects" instance=ExtResource("3_04sds")]
+position = Vector2(377, 239)
+
+[node name="House6" parent="LevelObjects" instance=ExtResource("3_04sds")]
+position = Vector2(586, 254)
+
+[node name="House7" parent="LevelObjects" instance=ExtResource("3_04sds")]
+position = Vector2(537, 361)
+
+[node name="House8" parent="LevelObjects" instance=ExtResource("3_04sds")]
+position = Vector2(620, 160)
+
+[node name="House9" parent="LevelObjects" instance=ExtResource("3_04sds")]
+position = Vector2(396, 126)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_wopbm")

@@ -15,12 +15,6 @@ func _create_extra_reindeer() -> void:
 		allReindeer.append(reindeerChild)
 		var movementComponent = reindeerChild.get_node("movementComp")
 		
-		var lineR = preload("res://Scenes/PlayerCharacter_folder/ReinLine2D.tscn").instantiate()
-		var lineL = preload("res://Scenes/PlayerCharacter_folder/ReinLine2D.tscn").instantiate()
-		
-		
-		#lineR.from_anchor = 
-		
 		if i == 0: #if first
 			$Sleigh/movementComp.follow_target = reindeerChild #link sleigh
 		else:

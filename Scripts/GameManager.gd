@@ -13,6 +13,7 @@ var current_housesFilled: int = 0
 var current_giftsUsed: int = 0
 var level_time : float = 0.0
 var tracking: bool = false
+var isGameplayMode: bool = false
 
 func _process(delta):
 	if tracking:
@@ -35,6 +36,7 @@ func _on_gift_thrown(): # from playerScript
 
 func _on_level_finish():
 	tracking = false #stop counting time 
+	isGameplayMode = false
 	
 	current_level = level_container.get_child(0)
 	var wastedGifts: int = current_giftsUsed - current_housesFilled

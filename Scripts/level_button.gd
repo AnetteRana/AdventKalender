@@ -31,6 +31,10 @@ func _ready():
 	button.pressed.connect(_on_pressed)
 
 func _on_pressed(): #only when enabled
+	if GameManager.isGameplayMode:
+		return
+		
+	GameManager.isGameplayMode = true
 	if not button.disabled and _getLevelPath() != "":
 		_playAudio()
 		await get_tree().create_timer(1.0).timeout #TODO better delay (signal based), transition screen

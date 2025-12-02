@@ -15,7 +15,7 @@ func _centerMe():
 	global_position = get_viewport_rect().size *0.5
 
 #called by SaveManager:
-func update_score_display(level_id: String, c_fewest: String, c_time: String, b_fewest: String, b_time: String):
+func update_score_display(c_fewest: String, c_time: String, b_fewest: String, b_time: String):
 	$VBoxContainer/VBox_current/HBoxContainer/wasted.text = c_fewest
 	$VBoxContainer/VBox_current/HBoxContainer2/time.text = c_time
 	$VBoxContainer/VBox_best/HBoxContainer/wasted.text = b_fewest
