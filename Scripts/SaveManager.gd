@@ -3,6 +3,8 @@ extends Node
 var filePath: String = "res://Data/SaveData.json"
 var save_data_cache: Dictionary = {} 
 
+var score_display: Control
+
 func _ready() -> void:
 	save_data_cache = get_saved_dictionary()
 
@@ -43,6 +45,8 @@ func update_score(level_id: String, gifts_lost: int, time: float):
 	if isNewRecord:
 		save_data_cache.levels[level_id] = current_lvl_savedata
 		save_data()
+	
+	score_display.update_score_display(level_id, str(gifts_lost), str(round(time * 10) / 10.0), str(current_lvl_savedata.wastedGifts), str(current_lvl_savedata.bestTime))
 
 # getters for UI
 func get_level_wastedGifts(level_id: String) -> String:

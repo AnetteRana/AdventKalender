@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://jw4gbd3s8pdr"]
+[gd_scene load_steps=9 format=3 uid="uid://jw4gbd3s8pdr"]
 
 [ext_resource type="Script" uid="uid://be7i0tnhedcyf" path="res://Scripts/level_container.gd" id="1_pbw6q"]
 [ext_resource type="Script" uid="uid://bsnrjfq1dakjn" path="res://Scripts/level_select.gd" id="2_v1gob"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://dqinb2ddxoowg" path="res://Scripts/info_panel.gd" id="4_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://cq2ww2k4qwss7" path="res://UI/LevelButton.tscn" id="4_rgh2o"]
 [ext_resource type="Theme" uid="uid://de4gnedaff1q4" path="res://ChristmasTheme.tres" id="4_v1gob"]
+[ext_resource type="Script" uid="uid://didj4jnoovl5d" path="res://Scenes/level_finished_display.gd" id="7_jw32o"]
+[ext_resource type="Texture2D" uid="uid://b25rnitk2na48" path="res://Assets/Sprites/gift.svg" id="8_50glp"]
 
 [node name="Main" type="Node2D"]
 
@@ -13,6 +15,7 @@
 script = ExtResource("1_pbw6q")
 
 [node name="LevelSelect" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("2_v1gob")
@@ -51,6 +54,7 @@ offset_top = 242.0
 offset_right = 143.0
 offset_bottom = 322.0
 level_num = 4
+unlock_date = "2025-12-04"
 
 [node name="LevelButton5" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
 offset_left = 243.0
@@ -58,6 +62,7 @@ offset_top = 308.0
 offset_right = 323.0
 offset_bottom = 388.0
 level_num = 5
+unlock_date = "2025-12-05"
 
 [node name="LevelButton6" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
 offset_left = 584.0
@@ -65,6 +70,7 @@ offset_top = 179.0
 offset_right = 664.0
 offset_bottom = 259.0
 level_num = 6
+unlock_date = "2025-12-06"
 
 [node name="LevelButton7" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
 offset_left = 714.0
@@ -72,7 +78,7 @@ offset_top = 175.0
 offset_right = 794.0
 offset_bottom = 255.0
 level_num = 7
-unlock_date = "2025-12-01"
+unlock_date = "2025-12-07"
 
 [node name="LevelButton8" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
 offset_left = 773.0
@@ -80,6 +86,7 @@ offset_top = 422.0
 offset_right = 853.0
 offset_bottom = 502.0
 level_num = 8
+unlock_date = "2025-12-08"
 
 [node name="LevelButton9" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
 offset_left = 158.0
@@ -166,3 +173,138 @@ text = "giftsMissed"
 layout_mode = 2
 theme = ExtResource("4_v1gob")
 text = "time spent"
+
+[node name="LevelFinishedDisplay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("7_jw32o")
+
+[node name="background image" type="TextureRect" parent="LevelFinishedDisplay"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -378.0
+offset_top = -378.0
+offset_right = 378.0
+offset_bottom = 378.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_50glp")
+
+[node name="Panel" type="Panel" parent="LevelFinishedDisplay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -126.0
+offset_right = 126.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelFinishedDisplay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -93.5
+offset_right = 99.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox_current" type="VBoxContainer" parent="LevelFinishedDisplay/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_current"]
+layout_mode = 2
+text = "Your score:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelFinishedDisplay/VBoxContainer/VBox_current"]
+layout_mode = 2
+
+[node name="wasted" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_current/HBoxContainer"]
+layout_mode = 2
+text = "adsfdasf"
+
+[node name="Label" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_current/HBoxContainer"]
+layout_mode = 2
+text = " gifts wasted!"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="LevelFinishedDisplay/VBoxContainer/VBox_current"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_current/HBoxContainer2"]
+layout_mode = 2
+text = "Time spent: "
+
+[node name="time" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_current/HBoxContainer2"]
+layout_mode = 2
+text = "200"
+
+[node name="Label2" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_current/HBoxContainer2"]
+layout_mode = 2
+text = " seconds"
+
+[node name="VBox_best" type="VBoxContainer" parent="LevelFinishedDisplay/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_best"]
+layout_mode = 2
+text = "Your best:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelFinishedDisplay/VBoxContainer/VBox_best"]
+layout_mode = 2
+
+[node name="wasted" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_best/HBoxContainer"]
+layout_mode = 2
+text = "adsfdasf"
+
+[node name="Label" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_best/HBoxContainer"]
+layout_mode = 2
+text = " gifts wasted!"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="LevelFinishedDisplay/VBoxContainer/VBox_best"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_best/HBoxContainer2"]
+layout_mode = 2
+text = "Time spent: "
+
+[node name="time" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_best/HBoxContainer2"]
+layout_mode = 2
+text = "200"
+
+[node name="Label2" type="Label" parent="LevelFinishedDisplay/VBoxContainer/VBox_best/HBoxContainer2"]
+layout_mode = 2
+text = " seconds"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="LevelFinishedDisplay/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="LevelFinishedDisplay/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_v1gob")
+text = "Yay!"
+
+[connection signal="pressed" from="LevelFinishedDisplay/VBoxContainer/Button" to="LevelFinishedDisplay" method="_on_button_pressed"]

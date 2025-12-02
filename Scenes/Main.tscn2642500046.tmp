@@ -1,0 +1,198 @@
+[gd_scene load_steps=9 format=3 uid="uid://jw4gbd3s8pdr"]
+
+[ext_resource type="Script" uid="uid://be7i0tnhedcyf" path="res://Scripts/level_container.gd" id="1_pbw6q"]
+[ext_resource type="Script" uid="uid://bsnrjfq1dakjn" path="res://Scripts/level_select.gd" id="2_v1gob"]
+[ext_resource type="Texture2D" uid="uid://dvyu60bvlaloa" path="res://Assets/Sprites/Untitled design (1).png" id="3_kln2b"]
+[ext_resource type="Script" uid="uid://dqinb2ddxoowg" path="res://Scripts/info_panel.gd" id="4_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://cq2ww2k4qwss7" path="res://UI/LevelButton.tscn" id="4_rgh2o"]
+[ext_resource type="Theme" uid="uid://de4gnedaff1q4" path="res://ChristmasTheme.tres" id="4_v1gob"]
+[ext_resource type="Script" uid="uid://didj4jnoovl5d" path="res://Scenes/level_finished_display.gd" id="7_jw32o"]
+[ext_resource type="Texture2D" uid="uid://b25rnitk2na48" path="res://Assets/Sprites/gift.svg" id="8_50glp"]
+
+[node name="Main" type="Node2D"]
+
+[node name="LevelContainer" type="Node2D" parent="."]
+script = ExtResource("1_pbw6q")
+
+[node name="LevelSelect" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_v1gob")
+
+[node name="Background" type="TextureRect" parent="LevelSelect"]
+layout_mode = 1
+texture = ExtResource("3_kln2b")
+
+[node name="LevelButton" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 676.0
+offset_top = 61.0
+offset_right = 876.0
+offset_bottom = 161.0
+level_num = 1
+unlock_date = "2025-11-25"
+
+[node name="LevelButton2" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 410.0
+offset_top = 444.0
+offset_right = 490.0
+offset_bottom = 524.0
+level_num = 2
+unlock_date = "2025-12-02"
+
+[node name="LevelButton3" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 251.0
+offset_top = 145.0
+offset_right = 331.0
+offset_bottom = 225.0
+level_num = 3
+unlock_date = "2025-12-03"
+
+[node name="LevelButton4" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 63.0
+offset_top = 242.0
+offset_right = 143.0
+offset_bottom = 322.0
+level_num = 4
+unlock_date = "2025-12-04"
+
+[node name="LevelButton5" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 243.0
+offset_top = 308.0
+offset_right = 323.0
+offset_bottom = 388.0
+level_num = 5
+unlock_date = "2025-12-05"
+
+[node name="LevelButton6" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 584.0
+offset_top = 179.0
+offset_right = 664.0
+offset_bottom = 259.0
+level_num = 6
+unlock_date = "2025-12-06"
+
+[node name="LevelButton7" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 714.0
+offset_top = 175.0
+offset_right = 794.0
+offset_bottom = 255.0
+level_num = 7
+unlock_date = "2025-12-07"
+
+[node name="LevelButton8" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 773.0
+offset_top = 422.0
+offset_right = 853.0
+offset_bottom = 502.0
+level_num = 8
+unlock_date = "2025-12-08"
+
+[node name="LevelButton9" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 158.0
+offset_top = 164.0
+offset_right = 238.0
+offset_bottom = 244.0
+level_num = 9
+
+[node name="LevelButton10" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 86.0
+offset_top = 409.0
+offset_right = 166.0
+offset_bottom = 489.0
+level_num = 10
+
+[node name="LevelButton11" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 327.0
+offset_top = 22.0
+offset_right = 407.0
+offset_bottom = 102.0
+level_num = 11
+
+[node name="LevelButton12" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
+offset_left = 516.0
+offset_top = 308.0
+offset_right = 596.0
+offset_bottom = 388.0
+level_num = 12
+
+[node name="InfoPanel" type="Control" parent="LevelSelect"]
+top_level = true
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 60.0
+theme = ExtResource("4_v1gob")
+script = ExtResource("4_pbw6q")
+
+[node name="Panel" type="Panel" parent="LevelSelect/InfoPanel"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelSelect/InfoPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -20.0
+offset_right = 79.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_v1gob")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelect/InfoPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Gifts wasted:"
+
+[node name="Label2" type="Label" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Fastest time: "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label_giftsMissed" type="Label" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_v1gob")
+text = "giftsMissed"
+
+[node name="Label_timeSpent" type="Label" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_v1gob")
+text = "time spent"
+
+[node name="LevelFinishedDisplay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("7_jw32o")
+
+[node name="TextureRect" type="TextureRect" parent="LevelFinishedDisplay"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_50glp")

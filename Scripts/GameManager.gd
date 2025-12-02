@@ -2,6 +2,7 @@ extends Node
 
 var level_container: Node2D
 var level_select: Control
+var score_display: Control
 
 var current_level: Node
 
@@ -42,6 +43,9 @@ func _on_level_finish():
 	await get_tree().create_timer(0.4).timeout
 	
 # evaluate and save score TODO:(show score screen really...)
+	
+	# show score screen
+	score_display.show()
 	
 # return level select menu 
 	level_select.show() 
