@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Sleigh.svg-47c6baf54a2dc4c3af581425238c7032.c
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

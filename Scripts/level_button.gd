@@ -1,6 +1,7 @@
 extends Control
 
 @export var level_num: int
+@export var level_name: String = "Julebyen"
 var level_ID: String # based in level_num
 @export var unlock_date: String = "2025-12-01"  # format YYYY-MM-DD
 @export var audio_clicked: AudioStream = preload("res://Assets/Audio/3Bells.wav")
@@ -16,7 +17,7 @@ func _setID():
 
 func _ready():
 	_setID()
-	
+	$Label.text = level_name
 	var now = Time.get_datetime_dict_from_system()
 	var todays_date = "%04d-%02d-%02d" % [now.year, now.month, now.day]
 

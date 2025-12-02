@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0i4mfsm4kgka"]
+[gd_scene load_steps=8 format=3 uid="uid://c0i4mfsm4kgka"]
 
 [ext_resource type="Script" uid="uid://dytpxx41xy4s3" path="res://Scripts/gift.gd" id="1_k6tov"]
 [ext_resource type="Texture2D" uid="uid://b25rnitk2na48" path="res://Assets/Sprites/gift.svg" id="1_xcs3i"]
@@ -7,6 +7,14 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qck2"]
 radius = 13.6015
+
+[sub_resource type="Curve" id="Curve_6kllv"]
+_data = [Vector2(0.236948, 1), 0.0, 0.0, 0, 0, Vector2(0.738956, 0.711604), -1.5651, -1.5651, 0, 0, Vector2(1, 0), -6.54064, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_6kllv"]
+offsets = PackedFloat32Array(0, 0.0762332, 0.152466, 0.246637, 0.515695, 0.793722, 1)
+colors = PackedColorArray(0.858135, 0.90598, 0.999999, 1, 0.823511, 0.838271, 0.705987, 1, 0.766249, 0.863641, 0.996429, 1, 0.949316, 0.97244, 0.998733, 1, 0.823591, 0.925986, 0.991778, 1, 1, 1, 1, 1, 0.947199, 0.947199, 0.947199, 1)
 
 [node name="Gift" type="Node2D"]
 z_index = 5
@@ -32,3 +40,19 @@ bus = &"SFX"
 stream = ExtResource("4_6kllv")
 volume_db = -33.0
 bus = &"SFX"
+
+[node name="SnowSplashParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 40
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.22
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 290.0
+initial_velocity_max = 300.0
+angular_velocity_max = 245.53
+scale_amount_min = 2.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_6kllv")
+color_ramp = SubResource("Gradient_6kllv")

@@ -15,7 +15,6 @@
 script = ExtResource("1_pbw6q")
 
 [node name="LevelSelect" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("2_v1gob")
@@ -25,96 +24,112 @@ layout_mode = 1
 texture = ExtResource("3_kln2b")
 
 [node name="LevelButton" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
-offset_left = 676.0
-offset_top = 61.0
-offset_right = 876.0
-offset_bottom = 161.0
+offset_left = 723.0
+offset_top = 173.0
+offset_right = 783.0
+offset_bottom = 233.0
 level_num = 1
-unlock_date = "2025-11-25"
+level_name = "Kautokeino"
+unlock_date = "2025-12-01"
 
 [node name="LevelButton2" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
-offset_left = 410.0
-offset_top = 444.0
-offset_right = 490.0
-offset_bottom = 524.0
+offset_left = 428.0
+offset_top = 396.0
+offset_right = 488.0
+offset_bottom = 456.0
 level_num = 2
+level_name = "Brønnøysund"
 unlock_date = "2025-12-02"
 
 [node name="LevelButton3" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
-offset_left = 251.0
-offset_top = 145.0
-offset_right = 331.0
-offset_bottom = 225.0
+offset_left = 505.0
+offset_top = 310.0
+offset_right = 565.0
+offset_bottom = 370.0
 level_num = 3
+level_name = "Mo i Rana"
 unlock_date = "2025-12-03"
 
 [node name="LevelButton4" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
-offset_left = 63.0
-offset_top = 242.0
-offset_right = 143.0
-offset_bottom = 322.0
+offset_left = 68.0
+offset_top = 367.0
+offset_right = 128.0
+offset_bottom = 427.0
 level_num = 4
+level_name = "Stavanger"
 unlock_date = "2025-12-04"
 
 [node name="LevelButton5" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
 offset_left = 243.0
 offset_top = 308.0
-offset_right = 323.0
-offset_bottom = 388.0
+offset_right = 303.0
+offset_bottom = 368.0
 level_num = 5
+level_name = "Hamar"
 unlock_date = "2025-12-05"
 
 [node name="LevelButton6" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
-offset_left = 584.0
-offset_top = 179.0
-offset_right = 664.0
-offset_bottom = 259.0
+offset_left = 521.0
+offset_top = 192.0
+offset_right = 581.0
+offset_bottom = 252.0
 level_num = 6
+level_name = "Svolvær"
 unlock_date = "2025-12-06"
 
 [node name="LevelButton7" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
-offset_left = 714.0
-offset_top = 175.0
-offset_right = 794.0
-offset_bottom = 255.0
+offset_left = 862.0
+offset_top = 134.0
+offset_right = 922.0
+offset_bottom = 194.0
 level_num = 7
+level_name = "Kirkenes"
 unlock_date = "2025-12-07"
 
 [node name="LevelButton8" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
 offset_left = 773.0
 offset_top = 422.0
-offset_right = 853.0
-offset_bottom = 502.0
+offset_right = 833.0
+offset_bottom = 482.0
 level_num = 8
+level_name = "Longyearbyen"
 unlock_date = "2025-12-08"
 
 [node name="LevelButton9" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
-offset_left = 158.0
-offset_top = 164.0
-offset_right = 238.0
-offset_bottom = 244.0
+offset_left = 719.0
+offset_top = 62.0
+offset_right = 779.0
+offset_bottom = 122.0
 level_num = 9
+level_name = "Hammerfest"
+unlock_date = "2025-12-09"
 
 [node name="LevelButton10" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
-offset_left = 86.0
-offset_top = 409.0
-offset_right = 166.0
-offset_bottom = 489.0
+offset_left = 88.0
+offset_top = 276.0
+offset_right = 148.0
+offset_bottom = 336.0
 level_num = 10
+level_name = "Bergen"
+unlock_date = "2025-12-10"
 
 [node name="LevelButton11" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
 offset_left = 327.0
 offset_top = 22.0
-offset_right = 407.0
-offset_bottom = 102.0
+offset_right = 387.0
+offset_bottom = 82.0
 level_num = 11
+level_name = "Snåsa"
+unlock_date = "2025-12-11"
 
 [node name="LevelButton12" parent="LevelSelect" instance=ExtResource("4_rgh2o")]
-offset_left = 516.0
-offset_top = 308.0
-offset_right = 596.0
-offset_bottom = 388.0
+offset_left = 252.0
+offset_top = 104.0
+offset_right = 312.0
+offset_bottom = 164.0
 level_num = 12
+level_name = "Trondheim"
+unlock_date = "2025-12-12"
 
 [node name="InfoPanel" type="Control" parent="LevelSelect"]
 top_level = true

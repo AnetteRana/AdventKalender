@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpbpbeagtgpb4"]
+[gd_scene load_steps=9 format=3 uid="uid://dpbpbeagtgpb4"]
 
 [ext_resource type="Script" uid="uid://ejjv0ftm2rt2" path="res://Scripts/house.gd" id="1_ftrsn"]
 [ext_resource type="Texture2D" uid="uid://p40i0qdc3bgt" path="res://Assets/Sprites/Houses/house_01.svg" id="1_xvb4y"]
@@ -10,6 +10,10 @@
 size = Vector2(37, 40)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ftrsn"]
+
+[sub_resource type="Gradient" id="Gradient_cpag2"]
+offsets = PackedFloat32Array(0, 0.242152, 0.426009, 0.623318, 0.816144, 1)
+colors = PackedColorArray(0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1)
 
 [node name="House" type="StaticBody2D" groups=["house"]]
 collision_layer = 5
@@ -29,3 +33,16 @@ shape = SubResource("RectangleShape2D_ftrsn")
 [node name="AudioPlayerComp" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_ftrsn")
 bus = &"SFX"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 22
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(16, 5)
+spread = 180.0
+gravity = Vector2(0, 0)
+scale_amount_max = 2.2
+color_ramp = SubResource("Gradient_cpag2")

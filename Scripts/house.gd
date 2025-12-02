@@ -17,7 +17,7 @@ func receive_gift() -> void:
 	else:
 		has_gift = true
 		emit_signal("_on_house_filled") #to gameManager
-		
+		$CPUParticles2D.emitting = true
 		# play sound
 		audio_player_comp.stream = good_sounds.pick_random()
 		audio_player_comp.play()

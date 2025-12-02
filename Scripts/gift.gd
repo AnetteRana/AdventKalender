@@ -32,7 +32,9 @@ func _resolve_landing() -> void:
 
 	# Missed house
 	audio_snow_landing.play()
-
+	#$SnowSplashParticles.show()
+	$SnowSplashParticles.emitting = true
+	$Sprite2D.visible = false
 	await get_tree().create_timer(miss_delay).timeout
 	queue_free()
 

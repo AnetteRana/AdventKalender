@@ -1,21 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq2ww2k4qwss7"]
+[gd_scene load_steps=3 format=3 uid="uid://cq2ww2k4qwss7"]
 
 [ext_resource type="Script" uid="uid://bfotv70dqt8tx" path="res://Scripts/level_button.gd" id="1_ccj6g"]
+[ext_resource type="Theme" uid="uid://de4gnedaff1q4" path="res://ChristmasTheme.tres" id="1_dvq7i"]
 
 [node name="LevelButton" type="Control"]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 80.0
-offset_bottom = 80.0
+offset_right = 60.0
+offset_bottom = 60.0
+theme = ExtResource("1_dvq7i")
 script = ExtResource("1_ccj6g")
 unlock_date = "2025-12-25"
 
 [node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
-offset_right = 80.0
-offset_bottom = 80.0
+offset_right = 60.0
+offset_bottom = 60.0
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 0
@@ -23,6 +25,21 @@ offset_right = 40.0
 offset_bottom = 23.0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_right = 44.0
+offset_bottom = 18.1458
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "Mo i Rana"
+horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
