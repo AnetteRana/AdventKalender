@@ -30,10 +30,8 @@ func follow_cursor():
 
 	global_position = pos
 
-func update_info(level_id: int):
+func update_info(level_id: int): # called by active AND inactive buttons
 	print("updating info...")
-	#if not Global.game_manager:
-		#return
 #
 	#var levelNumStr := str(level_id)
 #

@@ -49,10 +49,8 @@ func _on_mouse_exited() -> void:
 	if infoPanelCTRL:
 		infoPanelCTRL.visible = false
 
-
 func _on_button_mouse_entered() -> void:
-	print("mouse over button")
 	if infoPanelCTRL:
 		infoPanelCTRL.update_info(level_num)
 	else:
-		print("error: no infoPanelCTRL?") # Replace with function body.
+		print("error: no infoPanelCTRL?")
