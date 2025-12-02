@@ -32,31 +32,31 @@ func follow_cursor():
 
 func update_info(level_id: int):
 	print("updating info...")
-	if not Global.game_manager:
-		return
-
-	var levelNumStr := str(level_id)
-
-	# Safe access even if there's no save file yet
-	var save : Dictionary = Global.game_manager.save_data_cache
-	var levels: Dictionary = save.get("levels", {})
-
-	var data: Dictionary = levels.get(levelNumStr, {})
-
-	if data == null:
-		$VBoxContainer/Label_name.text = "Level " + levelNumStr
-		$VBoxContainer/Label_giftsMissed.text = "No data yet"
-		$VBoxContainer/Label_timeSpent.text = "-"
-		return
-
-	var bestTime = data.get("bestTime", 0.0)
-	var fewest   = data.get("fewest", 0)
-	
-	print(bestTime)
-			# set visibility
-	if bestTime != 0.0:
-		self.visible = true
-
-	$VBoxContainer/Label_name.text = "Level " + levelNumStr
-	$VBoxContainer/Label_giftsMissed.text = "Gifts missed " + str(int(fewest))
-	$VBoxContainer/Label_timeSpent.text = "%.1f s" % float(bestTime)
+	#if not Global.game_manager:
+		#return
+#
+	#var levelNumStr := str(level_id)
+#
+	## Safe access even if there's no save file yet
+	#var save : Dictionary = Global.game_manager.save_data_cache
+	#var levels: Dictionary = save.get("levels", {})
+#
+	#var data: Dictionary = levels.get(levelNumStr, {})
+#
+	#if data == null:
+		#$VBoxContainer/Label_name.text = "Level " + levelNumStr
+		#$VBoxContainer/Label_giftsMissed.text = "No data yet"
+		#$VBoxContainer/Label_timeSpent.text = "-"
+		#return
+#
+	#var bestTime = data.get("bestTime", 0.0)
+	#var fewest   = data.get("fewest", 0)
+	#
+	#print(bestTime)
+			## set visibility
+	#if bestTime != 0.0:
+		#self.visible = true
+#
+	#$VBoxContainer/Label_name.text = "Level " + levelNumStr
+	#$VBoxContainer/Label_giftsMissed.text = "Gifts missed " + str(int(fewest))
+	#$VBoxContainer/Label_timeSpent.text = "%.1f s" % float(bestTime)

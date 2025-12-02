@@ -25,13 +25,13 @@ func _on_pressed(): #only when enabled
 	if not button.disabled and _getLevelPath() != "":
 		_playAudio()
 		await get_tree().create_timer(1.0).timeout #TODO better delay (signal based), transition screen
-		# get_tree().change_scene_to_file(level_path)
-		
-		# get_tree().change_scene_to_file(_getLevelPath())
-		# tell main to load level:
-		var scenenene = get_tree().current_scene
-		scenenene.load_level(level_num)
-		get_parent().hide()
+
+		# tell main to load_level(level_num):
+		#var levelContainer = get_parent().get_parent().get_child(0)
+		GameManager.load_level(level_num)
+		#var scenenene = get_tree().current_scene
+		#scenenene.load_level(level_num)
+		get_parent().hide() # hide LevelSelect
 
 func _playAudio(): #TODO: make an audio manager instead
 	var player = AudioStreamPlayer.new()
