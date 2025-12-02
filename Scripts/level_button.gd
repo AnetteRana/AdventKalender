@@ -1,13 +1,22 @@
 extends Control
 
 @export var level_num: int
+var level_ID: String # based in level_num
 @export var unlock_date: String = "2025-12-01"  # format YYYY-MM-DD
 @export var audio_clicked: AudioStream = preload("res://Assets/Audio/3Bells.wav")
 @onready var button: Button = $Button
 
 @onready var infoPanelCTRL: Control = get_parent().get_node("InfoPanel")
 
+func _setID():
+	level_ID = str(level_num)
+	if level_ID.length()==1:
+		level_ID = "0"+level_ID
+	#print("Setting ID for level " + str(level_num) + ": " + level_ID)
+
 func _ready():
+	_setID()
+	
 	var now = Time.get_datetime_dict_from_system()
 	var todays_date = "%04d-%02d-%02d" % [now.year, now.month, now.day]
 
@@ -45,12 +54,11 @@ func _getLevelPath() -> String:
 			level_num_str = "0"+level_num_str
 		return "res://Levels/Level_" + level_num_str + ".tscn"
 
-func _on_mouse_exited() -> void:
-	if infoPanelCTRL:
-		infoPanelCTRL.visible = false
-
 func _on_button_mouse_entered() -> void:
 	if infoPanelCTRL:
-		infoPanelCTRL.update_info(level_num)
-	else:
-		print("error: no infoPanelCTRL?")
+		#infoPanelCTRL.visible =true
+		infoPanelCTRL.update_info(level_ID)
+
+func _on_button_mouse_exited() -> void:
+	if infoPanelCTRL:
+		infoPanelCTRL.visible = false

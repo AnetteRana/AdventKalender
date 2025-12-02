@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var numberOfReindeerPairs: int = 1
+@export var speedOverrite: float = 150.0
 var allReindeer: Array[Node2D] = []
 
 func _ready() -> void:
@@ -9,7 +10,7 @@ func _ready() -> void:
 func _create_extra_reindeer() -> void:
 	for i in range(numberOfReindeerPairs): #0, 1... make reindeer
 		print(i)
-		var reindeerChild = preload("res://Scenes/Reindeer.tscn").instantiate()
+		var reindeerChild = preload("res://Scenes/PlayerCharacter_folder/Reindeer.tscn").instantiate()
 		add_child(reindeerChild)
 		allReindeer.append(reindeerChild)
 		var movementComponent = reindeerChild.get_node("movementComp")
@@ -22,3 +23,4 @@ func _create_extra_reindeer() -> void:
 
 		if i >= numberOfReindeerPairs-1: #if last
 			movementComponent.is_leader = true
+			movementComponent.forward_speed = speedOverrite

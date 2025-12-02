@@ -47,7 +47,7 @@ func update_score(level_id: String, gifts_lost: int, time: float):
 # getters for UI
 func get_level_wastedGifts(level_id: String) -> String:
 	var current_lvl_savedata = save_data_cache.levels.get(level_id, {"wastedGifts": INF, "bestTime": INF})
-	return current_lvl_savedata.wastedGifts
+	return str(current_lvl_savedata.wastedGifts)
 func get_level_bestTime(level_id: String) -> String:
 	var current_lvl_savedata = save_data_cache.levels.get(level_id, {"wastedGifts": INF, "bestTime": INF})
-	return current_lvl_savedata.bestTime
+	return str(current_lvl_savedata.bestTime)

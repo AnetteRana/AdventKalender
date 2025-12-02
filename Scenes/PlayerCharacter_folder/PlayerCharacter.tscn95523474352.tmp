@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsmo4vj488gp1"]
+
+[ext_resource type="Script" uid="uid://bbrasmfjhld68" path="res://Scripts/player_character.gd" id="1_2getf"]
+[ext_resource type="PackedScene" uid="uid://2lebywwccw2m" path="res://Scenes/PlayerCharacter_folder/Sleigh.tscn" id="1_5gnj7"]
+
+[node name="PlayerCharacter" type="Node2D"]
+script = ExtResource("1_2getf")
+numberOfReindeerPairs = 2
+
+[node name="Sleigh" parent="." instance=ExtResource("1_5gnj7")]
+
+[node name="movementComp" parent="Sleigh" index="1"]
+forward_speed = 1.0
+
+[editable path="Sleigh"]

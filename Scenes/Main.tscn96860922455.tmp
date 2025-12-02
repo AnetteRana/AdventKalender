@@ -110,6 +110,7 @@ offset_bottom = 388.0
 level_num = 12
 
 [node name="InfoPanel" type="Control" parent="LevelSelect"]
+visible = false
 top_level = true
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 1
@@ -125,44 +126,22 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MarginContainer" type="MarginContainer" parent="LevelSelect/InfoPanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -79.5
-offset_top = -20.0
-offset_right = 79.5
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelect/InfoPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label_name" type="Label" parent="LevelSelect/InfoPanel/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("4_v1gob")
+text = "name"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelect/InfoPanel/MarginContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Gifts wasted:"
-
-[node name="Label2" type="Label" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Fastest time: "
-
-[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label_giftsMissed" type="Label" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label_giftsMissed" type="Label" parent="LevelSelect/InfoPanel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_v1gob")
 text = "giftsMissed"
 
-[node name="Label_timeSpent" type="Label" parent="LevelSelect/InfoPanel/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label_timeSpent" type="Label" parent="LevelSelect/InfoPanel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_v1gob")
 text = "time spent"

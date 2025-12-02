@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://g7pqj7023s8o"]
 
 [ext_resource type="Script" uid="uid://8e75gipwb5rw" path="res://Levels/level_script.gd" id="1_ejdw4"]
-[ext_resource type="PackedScene" uid="uid://dsmo4vj488gp1" path="res://Scenes/PlayerCharacter.tscn" id="3_0gwtk"]
+[ext_resource type="PackedScene" uid="uid://dsmo4vj488gp1" path="res://Scenes/PlayerCharacter_folder/PlayerCharacter.tscn" id="3_0gwtk"]
 [ext_resource type="PackedScene" uid="uid://dpbpbeagtgpb4" path="res://Scenes/House.tscn" id="4_t4xos"]
 
 [node name="Level01" type="Node2D"]

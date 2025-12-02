@@ -11,7 +11,7 @@ extends Node
 @export var bounce_damp: float = 1.0
 
 #@export var rein_line_scene: PackedScene
-const REIN_LINE_SCENE := preload("res://Scenes/ReinLine2D.tscn")
+const REIN_LINE_SCENE := preload("res://Scenes/PlayerCharacter_folder/ReinLine2D.tscn")
 
 func _ready()->void:
 	if follow_target and REIN_LINE_SCENE:
