@@ -13,7 +13,6 @@ func _setID():
 	level_ID = str(level_num)
 	if level_ID.length()==1:
 		level_ID = "0"+level_ID
-	#print("Setting ID for level " + str(level_num) + ": " + level_ID)
 
 func _ready():
 	_setID()

@@ -32,7 +32,6 @@ func _on_house_filled():
 
 func _on_gift_thrown(): # from playerScript
 	current_giftsUsed += 1
-	print(str(current_giftsUsed))
 
 func _on_level_finish():
 	tracking = false #stop counting time 
@@ -64,7 +63,10 @@ func load_level(levelNum: int):
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
+	# make sure to reset variables
 	current_housesFilled = 0
+	current_giftsUsed = 0
+	level_time = 0.0
 		
 	var path = _getLevelPath(levelNum)
 	#load new level

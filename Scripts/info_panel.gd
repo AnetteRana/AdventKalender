@@ -30,9 +30,7 @@ func follow_cursor():
 
 	global_position = pos
 
-func update_info(level_id: String): # called by active AND inactive buttons on hover
-	print("Level " + level_id + " gifts wasted: " + SaveManager.get_level_wastedGifts(level_id))
-#
+func update_info(level_id: String): # called by active AND inactive buttons on hover#
 	if SaveManager.get_level_wastedGifts(level_id) == "inf":
 		return
 	else:

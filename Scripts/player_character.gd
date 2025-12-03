@@ -9,7 +9,6 @@ func _ready() -> void:
 		
 func _create_extra_reindeer() -> void:
 	for i in range(numberOfReindeerPairs): #0, 1... make reindeer
-		print(i)
 		var reindeerChild = preload("res://Scenes/PlayerCharacter_folder/Reindeer.tscn").instantiate()
 		add_child(reindeerChild)
 		allReindeer.append(reindeerChild)

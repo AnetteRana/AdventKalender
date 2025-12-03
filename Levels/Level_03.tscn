@@ -8,7 +8,7 @@
 [node name="Level01" type="Node2D"]
 script = ExtResource("1_ejdw4")
 Level_ID = "03"
-HousesInLevel = 10
+HousesInLevel = 8
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_0gwtk")]
 position = Vector2(31, 269)

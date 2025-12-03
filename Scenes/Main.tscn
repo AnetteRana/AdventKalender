@@ -132,6 +132,7 @@ level_name = "Trondheim"
 unlock_date = "2025-12-12"
 
 [node name="InfoPanel" type="Control" parent="LevelSelect"]
+visible = false
 top_level = true
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 1
