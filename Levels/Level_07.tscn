@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://dffb4ixdvvwhf"]
+
+[ext_resource type="Script" uid="uid://8e75gipwb5rw" path="res://Levels/level_script.gd" id="1_1svuj"]
+[ext_resource type="PackedScene" uid="uid://dsmo4vj488gp1" path="res://Scenes/PlayerCharacter_folder/PlayerCharacter.tscn" id="2_k3c4l"]
+[ext_resource type="PackedScene" uid="uid://2s6l2xik3ign" path="res://Scenes/HouseInvisible.tscn" id="3_k3r14"]
+[ext_resource type="Texture2D" uid="uid://criltwtqegfy3" path="res://Assets/Sprites/maps/kirkenes01.png" id="4_1svuj"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_1svuj")
+Level_ID = "07"
+HousesInLevel = 1
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_k3c4l")]
+position = Vector2(31, 269)
+numberOfReindeerPairs = 3
+
+[node name="LevelObjects" type="Node" parent="."]
+
+[node name="HouseInvisible" parent="LevelObjects" instance=ExtResource("3_k3r14")]
+position = Vector2(565.41, 309.655)
+
+[node name="CollisionPolygon2D" parent="LevelObjects/HouseInvisible" index="0"]
+polygon = PackedVector2Array(19.59, 12.345, 0.590027, 17.345, -21.41, 13.345, -20.41, -9.655, 5.59003, -18.655, 18.59, -11.655)
+
+[node name="HouseInvisible6" parent="LevelObjects" instance=ExtResource("3_k3r14")]
+position = Vector2(431.82, 157.92)
+
+[node name="CollisionPolygon2D" parent="LevelObjects/HouseInvisible6" index="0"]
+polygon = PackedVector2Array(19.18, -6.92, 18.18, 20.08, -14.82, 20.08, -16.82, -5.92, -1.82001, -21.92)
+
+[node name="HouseInvisible2" parent="LevelObjects" instance=ExtResource("3_k3r14")]
+position = Vector2(822.87, 326.8)
+
+[node name="CollisionPolygon2D" parent="LevelObjects/HouseInvisible2" index="0"]
+polygon = PackedVector2Array(14.13, -5.79999, 14.13, 18.2, -18.87, 18.2, -19.87, -8.79999, -0.869995, -23.8)
+
+[node name="HouseInvisible7" parent="LevelObjects" instance=ExtResource("3_k3r14")]
+position = Vector2(234.555, 409.215)
+
+[node name="CollisionPolygon2D" parent="LevelObjects/HouseInvisible7" index="0"]
+polygon = PackedVector2Array(14.13, -5.79999, 14.13, 18.2, -18.87, 18.2, -19.87, -8.79999, -0.869995, -23.8)
+
+[node name="HouseInvisible8" parent="LevelObjects" instance=ExtResource("3_k3r14")]
+position = Vector2(264.61, 200.88)
+
+[node name="CollisionPolygon2D" parent="LevelObjects/HouseInvisible8" index="0"]
+polygon = PackedVector2Array(16.39, -5.88, 16.39, 16.12, -0.609985, 22.12, -19.61, 15.12, -19.61, -6.88, 2.39001, -24.88, 9.39001, -23.88)
+
+[node name="HouseInvisible9" parent="LevelObjects" instance=ExtResource("3_k3r14")]
+position = Vector2(158.37, 210.225)
+
+[node name="CollisionPolygon2D" parent="LevelObjects/HouseInvisible9" index="0"]
+polygon = PackedVector2Array(17.63, -9.22501, 19.63, 15.775, -21.37, 12.775, -20.37, -9.22501, -8.37, -19.225)
+
+[node name="HouseInvisible3" parent="LevelObjects" instance=ExtResource("3_k3r14")]
+position = Vector2(754.095, 218.29)
+
+[node name="CollisionPolygon2D" parent="LevelObjects/HouseInvisible3" index="0"]
+polygon = PackedVector2Array(19.905, -10.29, 19.905, 16.71, -19.095, 15.71, -21.095, -2.28999, -0.0949707, -23.29)
+
+[node name="HouseInvisible4" parent="LevelObjects" instance=ExtResource("3_k3r14")]
+position = Vector2(284.63, 321.39)
+
+[node name="CollisionPolygon2D" parent="LevelObjects/HouseInvisible4" index="0"]
+polygon = PackedVector2Array(16.37, -8.39001, 15.37, 11.61, -17.63, 11.61, -18.63, -6.39001, -10.63, -19.39)
+
+[node name="HouseInvisible5" parent="LevelObjects" instance=ExtResource("3_k3r14")]
+position = Vector2(424.175, 364.7)
+
+[node name="CollisionPolygon2D" parent="LevelObjects/HouseInvisible5" index="0"]
+polygon = PackedVector2Array(1.82501, 19.3, -28.175, 17.3, -31.175, -2.70001, -17.175, -18.7, 3.82501, -4.70001)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1059.0
+offset_bottom = 540.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_1svuj")
+expand_mode = 3
+stretch_mode = 4
+
+[editable path="LevelObjects/HouseInvisible"]
+[editable path="LevelObjects/HouseInvisible6"]
+[editable path="LevelObjects/HouseInvisible2"]
+[editable path="LevelObjects/HouseInvisible7"]
+[editable path="LevelObjects/HouseInvisible8"]
+[editable path="LevelObjects/HouseInvisible9"]
+[editable path="LevelObjects/HouseInvisible3"]
+[editable path="LevelObjects/HouseInvisible4"]
+[editable path="LevelObjects/HouseInvisible5"]

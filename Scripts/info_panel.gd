@@ -38,6 +38,5 @@ func update_info(level_id: String): # called by active AND inactive buttons on h
 		$MarginContainer/HBoxContainer/VBoxContainer/Label_timeSpent.text = SaveManager.get_level_bestTime(level_id)
 		self.visible = true
 
-
 func _on_button_pressed() -> void:
 	pass # Replace with function body.

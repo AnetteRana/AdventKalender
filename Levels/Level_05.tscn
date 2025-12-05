@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dva6a5l7ninby"]
+
+[ext_resource type="Script" uid="uid://8e75gipwb5rw" path="res://Levels/level_script.gd" id="1_whojv"]
+[ext_resource type="PackedScene" uid="uid://dsmo4vj488gp1" path="res://Scenes/PlayerCharacter_folder/PlayerCharacter.tscn" id="2_1knvi"]
+[ext_resource type="PackedScene" uid="uid://dpbpbeagtgpb4" path="res://Scenes/House.tscn" id="3_qvn0d"]
+[ext_resource type="Texture2D" uid="uid://bqjf3gfu0t1hw" path="res://Assets/Sprites/snowGround_01.svg" id="4_se88s"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_whojv")
+Level_ID = "05"
+HousesInLevel = 1
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_1knvi")]
+position = Vector2(31, 269)
+numberOfReindeerPairs = 7
+
+[node name="LevelObjects" type="Node" parent="."]
+
+[node name="House" parent="LevelObjects" instance=ExtResource("3_qvn0d")]
+position = Vector2(111, 111)
+
+[node name="House2" parent="LevelObjects" instance=ExtResource("3_qvn0d")]
+position = Vector2(362.475, 367)
+
+[node name="House3" parent="LevelObjects" instance=ExtResource("3_qvn0d")]
+position = Vector2(765.765, 135.09)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_se88s")

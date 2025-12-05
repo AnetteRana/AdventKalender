@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dqinb2ddxoowg" path="res://Scripts/info_panel.gd" id="4_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://cq2ww2k4qwss7" path="res://UI/LevelButton.tscn" id="4_rgh2o"]
 [ext_resource type="Theme" uid="uid://de4gnedaff1q4" path="res://ChristmasTheme.tres" id="4_v1gob"]
-[ext_resource type="Script" uid="uid://didj4jnoovl5d" path="res://Scenes/level_finished_display.gd" id="7_jw32o"]
+[ext_resource type="Script" uid="uid://didj4jnoovl5d" path="res://Scripts/level_finished_display.gd" id="7_jw32o"]
 [ext_resource type="Texture2D" uid="uid://b25rnitk2na48" path="res://Assets/Sprites/gift.svg" id="8_50glp"]
 
 [node name="Main" type="Node2D"]

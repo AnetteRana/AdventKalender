@@ -1,5 +1,7 @@
 extends Node
 
+var isAllUnlocked = false
+
 var level_container: Node2D
 var level_select: Control
 var score_display: Control

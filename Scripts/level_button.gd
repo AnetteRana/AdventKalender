@@ -20,7 +20,12 @@ func _ready():
 	var now = Time.get_datetime_dict_from_system()
 	var todays_date = "%04d-%02d-%02d" % [now.year, now.month, now.day]
 
-	if todays_date < unlock_date: # Locked
+	var isAllUnlocked = GameManager.isAllUnlocked
+
+	if isAllUnlocked: #all unlocked
+		button.disabled = false
+		button.text = str(level_num)
+	elif todays_date < unlock_date: # Locked
 		button.disabled = true
 		button.text = str(level_num)#"Locked until %s" % [unlock_date]
 	else: # Unlocked

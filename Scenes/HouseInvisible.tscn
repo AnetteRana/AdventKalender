@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://2s6l2xik3ign"]
+
+[ext_resource type="Script" uid="uid://ejjv0ftm2rt2" path="res://Scripts/house.gd" id="1_4d4jg"]
+[ext_resource type="AudioStream" uid="uid://cr5rghnrdouo1" path="res://Assets/Audio/Magic, Shimmer, Christmas, Ding, Christmas Star, Twinkle 01 SND41713.wav" id="2_ptvev"]
+[ext_resource type="AudioStream" uid="uid://ueynvinpdbkr" path="res://Assets/Audio/Magic, Shimmer, Christmas, Ding, Christmas Star, Twinkle 02 SND41712.wav" id="3_khsj3"]
+[ext_resource type="AudioStream" uid="uid://byqh4cf6y7bh1" path="res://Assets/Audio/Farts, Designed, Very Reverberant, Short, Meme Redesign SND140118.wav" id="4_7ymu7"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ftrsn"]
+
+[sub_resource type="Gradient" id="Gradient_cpag2"]
+offsets = PackedFloat32Array(0, 0.242152, 0.426009, 0.623318, 0.816144, 1)
+colors = PackedColorArray(0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1)
+
+[node name="House" type="StaticBody2D" groups=["house"]]
+collision_layer = 5
+collision_mask = 3
+script = ExtResource("1_4d4jg")
+good_sounds = Array[AudioStream]([ExtResource("2_ptvev"), ExtResource("3_khsj3")])
+bad_sounds = Array[AudioStream]([ExtResource("4_7ymu7")])
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="AudioPlayerComp" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ftrsn")
+bus = &"SFX"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 22
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(16, 5)
+spread = 180.0
+gravity = Vector2(0, 0)
+scale_amount_max = 2.2
+color_ramp = SubResource("Gradient_cpag2")
